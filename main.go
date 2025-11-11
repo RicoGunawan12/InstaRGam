@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"instargam/protogen/userpb"
 	userservice "instargam/user-service"
 	"log"
@@ -17,8 +16,6 @@ func main() {
 	}
 	grpcServer := grpc.NewServer()
 	userpb.RegisterUserServiceServer(grpcServer, &userservice.UserServiceServer{})
-
-	fmt.Printf("hello")
 
 	if err := grpcServer.Serve(lis); err != nil {
 		log.Fatalf("Error: %v", err)

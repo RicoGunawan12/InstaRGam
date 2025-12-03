@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"instargam/protogen/userpb"
 	"log"
 	"net/http"
@@ -33,6 +34,7 @@ func main() {
 			"users": res.Users,
 		})
 	})
+	fmt.Print("asd")
 
 	if err := r.Run(":8080"); err != nil {
 		log.Fatalf("Failed to run HTTP server: %v", err)

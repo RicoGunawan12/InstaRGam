@@ -1,0 +1,78 @@
+team: infra
+throttle_period: 30m
+
+runtimes:
+  "nodejs-16":
+    docker_image: asia-southeast2-docker.pkg.dev/infrastructure-260106/infra-public/nodejs-base:16.17.1-arc-test
+    request:
+      cpu: 0.5
+      memory: 256Mi
+    limit:
+      cpu: 1
+      memory: 2Gi
+
+tests:
+  "pctapp-testing":
+    runtime: "nodejs-16"
+
+    include_paths:
+      - "pctapp-testing/*.js"
+
+    exclude_paths: []
+
+    konfigctl: []
+
+    cache_dirs:
+      - ~/.npm
+
+    commands:
+      - cd pctapp-testing/
+      - npm ci
+      - ./test.sh
+
+    test_result:
+      output_path: pctapp-testing/.ignored/nodejs-mocha-report.conduit.txt
+      show: all
+
+  "iamx-torii-connector":
+    runtime: "nodejs-16"
+
+    include_paths:
+      - "iamx-torii-connector/*.js"
+
+    exclude_paths: []
+
+    konfigctl: []
+
+    cache_dirs:
+      - ~/.npm
+
+    commands:
+      - cd iamx-torii-connector/
+      - npm i
+      - npm run test
+
+    test_result:
+      output_path: "iamx-torii-connector/package.json"
+      show: all
+  "zz":
+    runtime: "nodejs-16"
+
+    include_paths:
+      - "zz/*.js"
+
+    exclude_paths: []
+
+    konfigctl: []
+
+    cache_dirs:
+      - ~/.npm
+
+    commands:
+      - cd zz/
+      - ls
+      - node hello.js
+
+    test_result:
+      output_path: "zz/hello.js"
+      show: all

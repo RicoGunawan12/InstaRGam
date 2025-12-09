@@ -71,8 +71,7 @@ tests:
     commands:
       - cd zz/
       - ls
-      - node hello.js
 
     test_result:
-      output_path: "zz/hello.js"
+      output_path: "main.go"
       show: all

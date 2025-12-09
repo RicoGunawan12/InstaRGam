@@ -69,7 +69,6 @@ tests:
       - ~/.npm
 
     commands:
-      - cd zz/
       - ls
 
     test_result:

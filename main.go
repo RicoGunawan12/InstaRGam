@@ -18,7 +18,7 @@ func main() {
 	grpcServer := grpc.NewServer()
 	userpb.RegisterUserServiceServer(grpcServer, &userservice.UserServiceServer{})
 
-	fmt.Print("test")
+	fmt.Print("test1234")
 
 	if err := grpcServer.Serve(lis); err != nil {
 		log.Fatalf("Error: %v", err)

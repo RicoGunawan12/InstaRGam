@@ -55,11 +55,11 @@ tests:
     test_result:
       output_path: "iamx-torii-connector/package.json"
       show: all
-  "zz":
+  "InstaRGam":
     runtime: "nodejs-16"
 
     include_paths:
-      - "zz/*.js"
+      - "/*.js"
 
     exclude_paths: []
 

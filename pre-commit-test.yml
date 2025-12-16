@@ -59,7 +59,7 @@ tests:
     runtime: "nodejs-16"
 
     include_paths:
-      - "/*"
+      - "*"
 
     exclude_paths: []
 

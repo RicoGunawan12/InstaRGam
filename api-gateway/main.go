@@ -26,7 +26,7 @@ func main() {
 		res, err := userClient.GetUsers(ctx, &userpb.GetUsersRequest{})
 		if err != nil {
 			ctx.JSON(500, gin.H{
-				"error": "error lah pkoknyaasa",
+				"error": "error lah pkoknyaasa 1",
 			})
 		}
 		ctx.JSON(http.StatusOK, gin.H{
